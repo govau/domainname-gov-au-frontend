@@ -34,6 +34,7 @@ jobs:
           paths:
             - public/
             - api/
+            - manifest.yml
 
   deploy-prod:
     docker:
