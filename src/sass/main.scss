@@ -1,0 +1,335 @@
+// Dark theme overrides
+// $AU-colordark-foreground-text: #ffffff;
+$AU-colordark-foreground-action: #bdf4ff;
+// $AU-colordark-foreground-focus: #e48ffc;
+$AU-colordark-background: #1c304a;
+
+// Light theme overrides
+$AU-color-foreground-action: #046b99;
+$AU-color-foreground-text: #212121;
+// $AU-color-background: #fcfcfc;
+// $AU-color-foreground-focus: #e48ffc;
+//Main nav, set project specific breakpoint
+
+$AU-color-bright: #00cfff;
+
+$AU-media-xs: 0px;
+$AU-media-sm: 576px;
+$AU-media-md: 768px;
+$AU-media-lg: 992px;
+$AU-media-xl: 1200px;
+$AU-main-nav-breakpoint: sm;
+@import "../auds/sass/pancake.scss";
+@import "card";
+@import "grid";
+@import "event";
+@import "form";
+@import "footer";
+
+// Reset the body
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.au-grid .container-fluid {
+  @include AU-space(max-width, 70unit);
+
+  @media screen and (min-width: 1400px) {
+    @include AU-space(max-width, 80unit);
+  }
+
+  @include AU-media(sm) {
+    @include AU-space(padding-left, 2unit);
+    @include AU-space(padding-right, 2unit);
+  }
+}
+
+main > .au-body {
+  @include AU-space(padding, 2unit 0);
+  @include AU-media(md) {
+    @include AU-space(padding, 3unit 0);
+  }
+}
+
+// Increase spacing between inline list items in footer
+.au-footer .au-link-list--inline li {
+  @include AU-space(padding-right, 1unit);
+}
+
+h1 {
+  word-wrap: break-word;
+}
+
+.au-body h2 {
+  @include AU-space(font-size, 1.75unit);
+}
+
+@media only screen and (max-width: $AU-media-xs) {
+  .au-body h1 {
+    @include AU-space(font-size, 2.45unit);
+  }
+
+  .au-body h2 {
+    @include AU-space(font-size, 2unit);
+  }
+}
+
+.header__badge {
+  @include AU-space(padding, 2px 0.5unit);
+  @include AU-space(margin-left, 0.5unit);
+  border: solid 2px $AU-colordark-foreground-text;
+  border-radius: 2em;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.mt-hero {
+  margin-top: 24px !important;
+  margin-top: 1.5rem !important;
+}
+
+.hero-image {
+  border-radius: $AU-border-radius;
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 0;
+  @include AU-space(padding, 1unit);
+  @include AU-space(margin-top, 1unit);
+  @include AU-media(xs) {
+    margin: 0;
+  }
+  @include AU-space(max-width, 500px);
+  background: white;
+}
+
+.au-breadcrumbs {
+  @include AU-space(margin-top, 1unit);
+}
+
+.au-header {
+  @include AU-space(padding, 3unit 0 1.5unit 0);
+}
+
+.intro-text {
+  color: #636363;
+  @include AU-fontgrid(lg);
+  max-width: 42rem !important;
+}
+
+.img-shadow {
+  border-radius: $AU-border-radius;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 42em !important;
+}
+
+.blog-heading {
+  @include AU-space(max-width, 42rem);
+}
+
+.au-main-nav--dark,
+.au-header,
+.au-footer,
+.footer-wrapper .au-body.au-body--dark {
+  background: transparent !important;
+}
+
+.au-main-nav__menu {
+  @include AU-media(sm) {
+    background: transparent !important;
+  }
+}
+
+.header-wrapper,
+.footer-wrapper {
+  background: rgb(28, 48, 74);
+  background: linear-gradient(
+    45deg,
+    rgba(28, 48, 74, 1) 0%,
+    rgba(25, 52, 88, 1) 100%
+  );
+  .ie9 & {
+    background: $AU-colordark-background;
+  }
+}
+
+.au-body--alt {
+  position: relative;
+}
+
+.inherit-bg {
+  background: inherit !important;
+}
+
+.intro {
+  @include AU-fontgrid(sm);
+
+  @include AU-media(sm) {
+    @include AU-fontgrid(md);
+  }
+  line-height: 1.6;
+}
+
+.stats {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  > li > div {
+    @include AU-space(padding, 1unit 0);
+    border-bottom: 4px solid #e0e0e0;
+    border-bottom: 0.25rem solid #e0e0e0;
+  }
+}
+
+.inline,
+.au-tag-list--inline {
+  display: inline-block;
+}
+
+.divider {
+  margin: 1.5rem 0 2rem 0 !important;
+  color: $AU-color-background-alt;
+  background-color: $AU-color-background-alt;
+  border: none !important;
+  height: 2px !important;
+}
+
+.au-tag {
+  border-color: #bbb;
+}
+
+.au-responsive-media {
+  @include AU-space(margin-top, 1unit);
+}
+
+.au-btn {
+  background-color: $AU-color-foreground-action;
+  color: $AU-colordark-foreground-text;
+  border-color: $AU-color-foreground-action;
+  font-weight: 500;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+
+  &:hover:not(:disabled) {
+    background-color: #313131;
+    border-color: #313131;
+    text-decoration: underline;
+    color: $AU-colordark-foreground-text;
+  }
+
+  .ie8 &:hover {
+    background-color: $AU-color-foreground-text;
+    border-color: $AU-color-foreground-text;
+    color: $AU-color-background;
+    text-decoration: underline;
+  }
+}
+
+#homepage-callout {
+  display: block;
+
+  ul + div {
+    @include AU-space(margin-top, 2unit);
+  }
+
+  @include AU-media(md) {
+    display: flex;
+
+    ul + div {
+      margin-top: 0;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.align-center {
+  align-self: center;
+}
+.au-header--dark .au-header__subline {
+  color: $AU-colordark-foreground-text;
+}
+
+.au-search {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  border-radius: $AU-border-radius;
+}
+
+.au-btn.au-btn--bright {
+  background-color: lighten($AU-color-bright, 10);
+  border-color: lighten($AU-color-bright, 10);
+  color: $AU-color-foreground-text !important;
+  @include AU-space("font-size", 1.1rem);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+
+  .au-search__btn & {
+    box-shadow: none;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: lighten($AU-color-bright, 15);
+    text-decoration: underline;
+    border-color: lighten($AU-color-bright, 15);
+    color: $AU-color-foreground-text;
+  }
+
+  .ie8 &:hover {
+    background-color: lighten($AU-color-bright, 2) !important;
+    border-color: lighten($AU-color-bright, 15) !important;
+    text-decoration: underline;
+  }
+}
+
+.yellow-pink-lg {
+  background: rgb(255, 255, 243);
+  background: linear-gradient(
+    133deg,
+    rgba(255, 255, 243, 1) 0%,
+    rgba(253, 241, 255, 1) 100%
+  );
+}
+
+figure {
+  margin: 0;
+  figcaption {
+    font-style: italic;
+  }
+}
+
+.blog-content {
+  border-right: none;
+  @include AU-media(md) {
+    border-right: solid 1px lightgrey;
+  }
+}
+
+.blog-metadata {
+  @include AU-space(padding-bottom, 1unit);
+  @include AU-space(margin-bottom, 1unit);
+
+  ::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    border-bottom: 1px solid lightgrey;
+  }
+
+  @include AU-media(md) {
+    border-bottom: none;
+    padding: none;
+
+    ::before {
+      display: none;
+    }
+  }
+}
+
+dl dd {
+  border-left: none !important;
+}

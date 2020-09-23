@@ -1,0 +1,103 @@
+version: 2.1
+jobs:
+  build-and-test:
+    docker:
+      - image: circleci/node:12.16.2
+    working_directory: ~/domainname
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore node_modules from cache
+          keys:
+            - v1-npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - v1-npm-deps-{{ .Branch }}-
+            - v1-npm-deps-
+      - run:
+          name: Install dependencies
+          command: |
+            npm i
+            npm run pancake
+            cd api
+            npm i
+      - save_cache:
+          name: Save node_modules to cache
+          key: v1-npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/domainname/node_modules/
+      - run:
+          name: Set envs, test and build
+          command: |
+            npm run lint
+            npm run build
+      - persist_to_workspace:
+          root: ~/domainname
+          paths:
+            - public/
+            - api/
+
+  deploy-prod:
+    docker:
+      - image: govau/cf-cli
+    steps:
+      - attach_workspace:
+          at: ~/domainname
+      - run:
+          name: Deploy to cloud.gov.au production
+          command: |
+            cd ~/domainname
+            cf login -a $CF_API_PROD -o $CF_ORG -s $CF_SPACE -u $CF_USERNAME -p $CF_PASSWORD_PROD
+            cf zero-downtime-push domainname -f manifest.yml
+
+  deploy-staging:
+    docker:
+      - image: govau/cf-cli
+    steps:
+      - attach_workspace:
+          at: ~/domainname
+      - run:
+          name: Deploy to cloud.gov.au staging
+          command: |
+            cd ~/domainname
+            cf login -a $CF_API_STAGING -o $CF_ORG -s $CF_SPACE -u $CF_USERNAME -p $CF_PASSWORD_STAGING
+            cf zero-downtime-push domainname-staging -f manifest.yml
+
+  deploy-test:
+    docker:
+      - image: govau/cf-cli
+    steps:
+      - attach_workspace:
+          at: ~/domainname
+      - run:
+          name: Deploy to cloud.gov.au testing
+          command: |
+            cd ~/domainname
+            cf login -a $CF_API_STAGING -o $CF_ORG -s $CF_SPACE -u $CF_USERNAME -p $CF_PASSWORD_STAGING
+            cf zero-downtime-push domainname-$CIRCLE_BRANCH -f manifest.yml
+
+
+workflows:
+  version: 2.1
+  build-and-deploy:
+    jobs:
+      - build-and-test
+
+      - deploy-prod:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only: master
+
+      - deploy-staging:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only: develop
+
+      - deploy-test:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only: /.*-test/

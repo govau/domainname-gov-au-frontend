@@ -1,0 +1,16 @@
+---
+applications:
+  - name: domainname-api
+    path: ./api
+    command: npm start
+    buildpack: nodejs_buildpack
+    memory: 64M
+    instances: 1
+  - name: domainname
+    path: ./public
+    buildpack: staticfile_buildpack
+    memory: 64M
+    instances: 1
+
+services:
+  - dna-credentials
