@@ -47,6 +47,7 @@ jobs:
           command: |
             cd ~/domainname
             cf login -a $CF_API_PROD -o $CF_ORG -s $CF_SPACE -u $CF_USERNAME -p $CF_PASSWORD_PROD
+            cf zero-downtime-push domainname-api -f manifest.yml
             cf zero-downtime-push domainname -f manifest.yml
 
   deploy-staging:
@@ -60,6 +61,7 @@ jobs:
           command: |
             cd ~/domainname
             cf login -a $CF_API_STAGING -o $CF_ORG -s $CF_SPACE -u $CF_USERNAME -p $CF_PASSWORD_STAGING
+            cf zero-downtime-push domainname-api -f manifest.yml
             cf zero-downtime-push domainname -f manifest.yml
 
   deploy-test:
@@ -73,6 +75,7 @@ jobs:
           command: |
             cd ~/domainname
             cf login -a $CF_API_STAGING -o $CF_ORG -s $CF_SPACE -u $CF_USERNAME -p $CF_PASSWORD_STAGING
+            cf zero-downtime-push domainname-api-$CIRCLE_BRANCH -f manifest.yml
             cf zero-downtime-push domainname-$CIRCLE_BRANCH -f manifest.yml
 
 
