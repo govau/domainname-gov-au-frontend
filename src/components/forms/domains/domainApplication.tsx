@@ -4,7 +4,6 @@ import { Formik, Form } from "formik";
 
 import TextField from "../text-field";
 import SelectField from "../drop-down";
-import CheckBoxField from "../checkbox";
 import { Aubtn, AuFormGroup, AuFieldset, AuLegend } from "../../helpers/auds";
 import PageAlert from "../../blocks/page-alert";
 import { navigate } from "@reach/router";

@@ -4,13 +4,12 @@ import { Formik, Form } from "formik";
 
 import TextField from "../text-field";
 import SelectField from "../drop-down";
-import CheckBoxField from "../checkbox";
 import { Aubtn, AuFormGroup, AuFieldset, AuLegend } from "../../helpers/auds";
 import PageAlert from "../../blocks/page-alert";
 import { navigate } from "@reach/router";
 import { InitialValues, Schema, FormData } from "./validate";
 
-var fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 const domainTransferForm: React.FC = () => {
   const [state, setState] = useState({

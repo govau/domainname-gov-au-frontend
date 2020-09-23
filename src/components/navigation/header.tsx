@@ -1,5 +1,4 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import { AUHeader, Brand } from "../helpers/auds";
 
 interface Props {

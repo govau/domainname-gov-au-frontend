@@ -17,8 +17,8 @@ const IndexPage: React.FC<PageContext> = ({ pageContext, location }) => {
         />
         <h1>Apply for a new gov.au domain</h1>
 
-        <div class="row">
-          <div class="col-md-9">
+        <div className="row">
+          <div className="col-md-9">
             <DomainApplicationForm></DomainApplicationForm>
           </div>
         </div>
