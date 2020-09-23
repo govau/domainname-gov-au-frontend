@@ -47,7 +47,7 @@ jobs:
           command: |
             cd ~/domainname
             cf login -a $CF_API_PROD -o $CF_ORG -s $CF_SPACE -u $CF_USERNAME -p $CF_PASSWORD_PROD
-            cf zero-downtime-push -f manifest.yml
+            cf push
 
   deploy-staging:
     docker:
@@ -60,7 +60,7 @@ jobs:
           command: |
             cd ~/domainname
             cf login -a $CF_API_STAGING -o $CF_ORG -s $CF_SPACE -u $CF_USERNAME -p $CF_PASSWORD_STAGING
-            cf zero-downtime-push -f manifest.yml
+            cf push
 
   deploy-test:
     docker:
