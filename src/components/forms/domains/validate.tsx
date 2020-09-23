@@ -1,6 +1,5 @@
 import * as Yup from "yup";
 
-/*
 export const InitialValues: FormData = {
   applicantName: "",
   applicantEmail: "",
@@ -20,30 +19,6 @@ export const InitialValues: FormData = {
   technicalPhone: "",
   technicalCity: "",
   technicalState: ""
-};
-
-const govAuRegex = /(\.gov\.au$)/;
-*/
-
-export const InitialValues: FormData = {
-  applicantName: "Gordon Williamson",
-  applicantEmail: "gordon.williamson@dta.gov.au",
-  applicantPhone: "0402899779",
-  domainName: "frontend.gov.au",
-  nameServers: "ns1.frontend.gov.au",
-  registrantOrganisation: "Digital Transformation Agency",
-  registrantName: "Gordon Reg",
-  registrantEmail: "gordon.williamson@digital.gov.au",
-  registrantPhone: "0402899779",
-  registrantCity: "Canberra",
-  registrantState: "ACT",
-  statedPurpose: "Testing the frontend",
-  technicalOrganisation: "Digital Transformation Agency",
-  technicalName: "Gordon Tech",
-  technicalEmail: "gordon.williamson@dta.gov.au",
-  technicalPhone: "0402899779",
-  technicalCity: "Canberra",
-  technicalState: "ACT"
 };
 
 const govAuRegex = /(\.gov\.au$)/;

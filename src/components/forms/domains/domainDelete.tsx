@@ -34,8 +34,6 @@ const domainDeleteForm: React.FC = () => {
   const submitForm = async (formData: FormData) => {
     setSaving(true);
 
-    console.log(formData);
-
     const fetchUrl = 'http://localhost:9000/api/domain';
     const headers = { 'Content-Type': 'application/json' };
 

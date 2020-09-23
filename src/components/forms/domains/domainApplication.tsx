@@ -13,9 +13,6 @@ import fetch from "node-fetch";
 
 const credentials = { 'backendService': process.env.REACT_APP_API_ADDRESS };
 
-console.log(credentials.backendService)
-console.log(process.env)
-
 const domainApplicationForm: React.FC = () => {
   const [state, setState] = useState({
     isErrors: false,
