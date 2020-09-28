@@ -333,3 +333,8 @@ figure {
 dl dd {
   border-left: none !important;
 }
+
+.tier {
+  @include AU-space(margin-bottom, 3unit);
+  @include AU-space(margin-top, 3unit);
+}

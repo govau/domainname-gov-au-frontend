@@ -1,9 +1,9 @@
 import React from "react";
-import SEO from "../../components/seo";
-import DefaultLayout from "../../components/layouts/default-layout";
-import { PageContext } from "../../components/helpers/types";
-import DomainApplicationForm from "../../components/forms/domains/domainApplication";
-import { AuHintText } from "../../components/helpers/auds";
+import SEO from "../components/seo";
+import DefaultLayout from "../components/layouts/default-layout";
+import { PageContext } from "../components/helpers/types";
+import DomainApplicationForm from "../components/forms/domains/domainApplication";
+import { AuHintText } from "../components/helpers/auds";
 
 const IndexPage: React.FC<PageContext> = ({ pageContext, location }) => {
   //get MD content
