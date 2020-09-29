@@ -164,12 +164,11 @@ const domainUpdateNameserverForm: React.FC = () => {
 
           <AuFieldset className="fieldset-group">
             <h3>
-              <AuLegend>4. Lets go!</AuLegend>
+              <AuLegend>4. Send request to update domain</AuLegend>
             </h3>
             <p>
-              When you submit this form, your details will be recorded. A member
-              of the DTA&apos;s analytics team will contact you within 1
-              business day with confirmation of your subscription.
+              When you submit this form, your details will be recorded and
+              a confirmation request will be emailed to the applicant.
             </p>
             <AuFormGroup>
               <Aubtn type="submit" disabled={saving}>
