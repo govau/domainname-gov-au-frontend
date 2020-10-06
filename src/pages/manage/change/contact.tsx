@@ -6,8 +6,6 @@ import DomainUpdateContactForm from "../../../components/forms/domains/domainUpd
 import { AuHintText } from "../../../components/helpers/auds";
 
 const IndexPage: React.FC<PageContext> = ({ pageContext, location }) => {
-  //get MD content
-
   return (
     <DefaultLayout pageContext={pageContext} location={location}>
       <div className="container-fluid au-body">
@@ -17,7 +15,7 @@ const IndexPage: React.FC<PageContext> = ({ pageContext, location }) => {
         />
         <h1>Change the contact details for a gov.au domain name</h1>
 
-        <div className="row">
+        <div className="row tier">
           <div className="col-md-9">
             <DomainUpdateContactForm></DomainUpdateContactForm>
           </div>

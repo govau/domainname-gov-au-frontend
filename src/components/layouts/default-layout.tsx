@@ -53,7 +53,9 @@ const DefaultLayout: React.FC<Props> = ({
             <Breadcrumbs crumbs={crumbs} />
           </div>
         )}
-        {children}
+        <div className="row tier">
+          {children}
+        </div>
       </main>
       <Footer path={location.pathname} />
     </>
