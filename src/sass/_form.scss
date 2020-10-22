@@ -5,6 +5,7 @@
 * + .au-form-group,
 .au-page-alerts {
   @include AU-space(margin-top, 1.5unit);
+  @include AU-space(margin-bottom, 1.5unit);
 }
 
 .max-42,
@@ -60,4 +61,9 @@
 
 .au-text-input--invalid {
   background-color: #fff !important;
+}
+
+.au-button-secondary {
+  padding-left: 0px;
+  padding-right: 5px;
 }
