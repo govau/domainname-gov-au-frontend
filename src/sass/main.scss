@@ -171,6 +171,16 @@ h1 {
   line-height: 1.6;
 }
 
+.body {
+  @include AU-fontgrid(sm);
+
+  @include AU-media(sm) {
+    @include AU-fontgrid(sm);
+  }
+  line-height: 1.2;
+}
+
+
 .stats {
   margin: 0;
   padding: 0;

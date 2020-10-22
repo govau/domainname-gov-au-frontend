@@ -8,10 +8,16 @@ type: standard
 
   # Secure, reliable management of gov.au domain names 
 
+</div>
+<br>
+<div class="row">
   <p class="intro">
     gov.au is the top-level domain for Australian Commonwealth, State, Territory and Local government digital services.
   </p>
-  <p class="intro">
+</div>
+<br>
+<div class="row">
+  <p class="body">
     Use this service to apply for new gov.au domains or to manage existing domains.
   </p>
 </div>
@@ -43,13 +49,10 @@ type: standard
       </div>
     </div>
   </div>
-
-<div class="row tier">
-
-<p class="intro">
-  Government services should be easy to identify on the internet. The Domain Name Administration team, part of the Digital Transformation Agency, operates the gov.au top-level domain (TLD) and makes it available to Australian government organisations, from federal agencies to local municipalities. Using a gov.au domain shows you’re an official government organization.
-</p>
 </div>
-
-
+<br>
+<div class="row">
+  <p class="body">
+    Government services should be easy to identify on the internet. The Domain Name Administration team, part of the Digital Transformation Agency, operates the gov.au top-level domain (TLD) and makes it available to Australian government organisations, from federal agencies to local municipalities. Using a gov.au domain shows you’re an official government organization.
+  </p>
 </div>
