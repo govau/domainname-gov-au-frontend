@@ -27,6 +27,10 @@ module.exports = {
       {
         text: "Contact",
         link: "/contact",
+      },
+      {
+        text: "Help and advice",
+        link: "/help-and-advice",
       }
     ],
     footerLinks: [
