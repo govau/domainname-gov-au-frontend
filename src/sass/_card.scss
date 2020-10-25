@@ -85,3 +85,11 @@
 .inline {
   display: inline;
 }
+
+.match-height {
+  display: flex;
+  flex-wrap: wrap;
+  > div {
+    display: flex;
+  }
+}
