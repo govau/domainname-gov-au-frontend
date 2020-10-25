@@ -29,13 +29,11 @@ metaDesc: About the gov.au domain name services
 
   This **site does NOT** provide domain administration services for the Northern Territory or Tasmania. Domain registrations are offered independently by these jurisdictions via the following contact details.
 
-    - [Contact Us – Northern Territory Government](../contact#northern-territory)
+  - [Northern Territory Government domain contact details](../contact#northern-territory)
+  - [Tasmanian Government domain contact details](../contact#tasmania)
+  - If the domain name is to be decommissioned, the Admin contact should [request a deletion](../../manage/delete) from the domain name system.
+  - If the domain is to be redirected, ensure that redirection instructions are built into the DNS record.
 
-    - [Contact Us – Tasmanian Government](../contact#tasmania)
-
-    - If the domain name is to be decommissioned, the Admin contact should [request a deletion](../../manage/delete) from the domain name system.
-    - If the domain is to be redirected, ensure that redirection instructions are built into the DNS record.
-    
   -----------------------------------------
 
   ### What is the gov.au Domain?
