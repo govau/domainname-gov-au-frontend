@@ -43,7 +43,7 @@ Shared Services ICT<br/>
 <a href="tel:+61262050267">(02) 6205 0267</a><br/>
 <a href="fax:+61262059042">(02) 6205 9042</a><br/>
 <a href="mailto:SharedServicesICTDNA@act.gov.au">SharedServicesICTDNA@act.gov.au</a><br/>
-<a href="http://www.cmtedd.act.gov.au/shared-services/domain-names">ACT domain name policies</a>
+<a href="https://www.cmtedd.act.gov.au/commercial-services-and-infrastructure/shared-services">ACT domain name policies</a>
 
 -----------------------------------------
 
