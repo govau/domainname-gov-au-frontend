@@ -4,35 +4,53 @@ title: Home
 metaDesc: Secure, reliable management of gov.au domain names 
 type: standard
 ---
+<div class="container-fluid">
+  <div class="row">
 
-# Domain Name Administration
-<p class="intro">
-  We help Australian federal, state and territory governments to register and manage their gov.au domain names.
-</p>
+  # Secure, reliable management of gov.au domain names 
 
-<div class="row tier">
-<div class="col-md-6">
-
-## Apply for a new gov.au domain
-
-You are eligible to apply for a gov.au domain name if you are an employee of a:
-- government department or agency;
-- local government entity;
-- statutory authority; 
-- or other defined government body
-
-
-<a class="au-cta-link" href="/apply">Apply for a new gov.au domain</a>
-</div>
-
-<div class="col-md-6">
-
-## Manage an existing gov.au domain
-
-- I need to change the addresses of my authoritative domain name servers. <br/><a class="au-cta-link" href="/manage/change/nameserver">Change name servers</a>
-- I need to change the registrant and technical contact details for my domain. <br/><a class="au-cta-link" href="/manage/change/contact">Change contact details</a>
-- I need to transfer ownership of my domain to another government agency. <br/><a class="au-cta-link" href="/manage/transfer">Transfer domain to another organisation</a>
-- I no longer need my domain name, and want to delete it. <br/><a class="au-cta-link" href="/manage/delete">Delete a domain</a>
-
-</div>
+  </div>
+  <div class="row">
+    <p class="intro">
+      gov.au is the top-level domain for Australian Commonwealth, State, Territory and Local government digital services.
+    </p>
+  </div>
+  <div class="row">
+    <p class="body">
+      Use this service to apply for new gov.au domains or to manage existing domains.
+    </p>
+  </div>
+  <div class="row">
+      <div class="match-height">
+        <div class="col-md-3">
+          <div class="au-card au-body au-card--shadow au-card--clickable">
+            <div class="au-card__inner">
+              <h3 class="au-card__title"><a class="au-card--clickable__link" href="/apply">Apply for a new gov.au domain name</a></h3>
+              <!-- <p>Insert content here for subtitle</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="au-card au-body au-card--shadow au-card--clickable">
+            <div class="au-card__inner">
+              <h3 class="au-card__title"><a class="au-card--clickable__link" href="/manage">Manage an existing gov.au domain name</a></h3>
+              <!-- <p>Insert content here for subtitle</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="au-card au-body au-card--shadow au-card--clickable">
+            <div class="au-card__inner">
+              <h3 class="au-card__title"><a class="au-card--clickable__link" href="/help">Guidance, help and advice for gov.au domains</a></h3>
+              <!-- <p>Insert content here for subtitle</p> -->
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <p class="body">
+      Government services should be easy to identify on the internet. The Domain Name Administration team, part of the Digital Transformation Agency, operates the gov.au top-level domain (TLD) and makes it available to Australian government organisations, from federal agencies to local municipalities. Using a gov.au domain shows you’re an official government organization.
+    </p>
+  </div>
 </div>

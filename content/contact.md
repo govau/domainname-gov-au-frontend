@@ -4,18 +4,29 @@ title: Contact
 metaDesc: Contact a domain administrator in your jurisdiction
 type: standard
 ---
+<div class="container-fluid">
+    <div class="row">
 
 # Contact
 
-* [Commonwealth](#commonwealth)
-* [Australian Capital Territory](#australian-capital-territory)
-* [New South Wales](#new-south-wales)
-* [Nothern Territory](#northern-territory)
-* [Queensland](#queensland)
-* [South Australia](#south-australia)
-* [Tasmania](#tasmania)
-* [Victoria](#victoria)
-* [Western Australia](#western-australia)
+----------------------------------------------
+
+  </div>    
+  <div class="row">
+    <div class="col-md-4 col-xs-12">
+
+- [Commonwealth](#commonwealth)
+- [Australian Capital Territory](#australian-capital-territory)
+- [New South Wales](#new-south-wales)
+- [Nothern Territory](#northern-territory)
+- [Queensland](#queensland)
+- [South Australia](#south-australia)
+- [Tasmania](#tasmania)
+- [Victoria](#victoria)
+- [Western Australia](#western-australia)
+
+    </div>
+    <div class="col-md-5 col-xs-12 ">
 
 ## Commonwealth
 Domain Name Administrator<br/>
@@ -24,14 +35,17 @@ Digital Transformation Agency<br/>
 <a href="mailto:dna@dta.gov.au">dna@dta.gov.au</a><br/>
 <a href="/policies">Commonwealth domain name policies</a>
 
+-----------------------------------------
+
 ## Australian Capital Territory
 ACT Domain Name Administrator<br/>
 Shared Services ICT<br/>
 <a href="tel:+61262050267">(02) 6205 0267</a><br/>
 <a href="fax:+61262059042">(02) 6205 9042</a><br/>
 <a href="mailto:SharedServicesICTDNA@act.gov.au">SharedServicesICTDNA@act.gov.au</a><br/>
-<a href="http://www.cmtedd.act.gov.au/shared-services/domain-names">ACT domain name policies</a>
+<a href="https://www.cmtedd.act.gov.au/commercial-services-and-infrastructure/shared-services">ACT domain name policies</a>
 
+-----------------------------------------
 
 ## New South Wales
 NSW Domain Name Administrator<br/>
@@ -39,6 +53,7 @@ Department of Customer Service<br/>
 <a href="mailto:domainadmin@customerservice.nsw.gov.au">domainadmin@customerservice.nsw.gov.au</a><br/>
 <a href="https://www.nsw.gov.au/nsw-government-communications/nswgovau-domain-names">NSW domain name policies</a>
 
+-----------------------------------------
 
 ## Northern Territory
 IT Security NTG<br/>
@@ -47,6 +62,7 @@ Department of Corporate and Information Services<br/>
 <a href="fax:+61889239541">(08) 8923 9541</a><br/>
 <a href="ICTSecurity.NTG@nt.gov.au">ICTSecurity.NTG@nt.gov.au</a>
 
+-----------------------------------------
 
 ## Queensland
 Katy Drew<br/>
@@ -55,6 +71,7 @@ Katy Drew<br/>
 <a href="mailto:dna@qld.gov.au">dna@qld.gov.au</a><br/>
 <a href="https://www.qgcio.qld.gov.au/documents/domain-names-registration-and-management-standard">Queensland domain name policies</a>
 
+-----------------------------------------
 
 ## South Australia
 Jason Whiteley<br/>
@@ -65,7 +82,7 @@ Department of Premier and Cabinet<br/>
 <a href="mailto:hostmaster@sa.gov.au">hostmaster@sa.gov.au</a><br/>
 <a href="https://www.dpc.sa.gov.au/responsibilities/ict-digital-cyber-security/policies-and-guidelines/website">South Australia domain name policies</a>
 
-
+-----------------------------------------
 
 ## Tasmania
 Manager, Information & Technology Services<br/>
@@ -73,6 +90,8 @@ Department of the Premier and Cabinet<br/>
 <a href="tel:+61362327700">(03) 6232 7700</a><br/>
 <a href="mailto:ITS@dpac.tas.gov.au">ITS@dpac.tas.gov.au</a><br/>
 <a href="http://www.communications.tas.gov.au/channels/websites">Tasmania domain name policies</a>
+
+-----------------------------------------
 
 ## Victoria
 Vanessa Scott<br/>
@@ -82,6 +101,7 @@ Department of Premier and Cabinet<br/>
 <a href="mailto:dna@vic.gov.au">dna@vic.gov.au</a><br/>
 <a href="https://www.vic.gov.au/apply-domain-name">Victoria domain name policies</a>
 
+-----------------------------------------
 
 ## Western Australia
 WA Domain Name Administrator<br/>
@@ -89,5 +109,6 @@ Office of Digital Government<br/>
 Department of the Premier and Cabinet<br/>
 <a href="mailto:dna@wa.gov.au">dna@wa.gov.au</a><br/>
 <a href="https://www.wa.gov.au/organisation/department-of-the-premier-and-cabinet/western-australian-domain-name-administrator">Western Australia domain name policies</a>
-
-
+        </div>
+    </div>
+</div>
