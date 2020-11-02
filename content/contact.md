@@ -41,7 +41,6 @@ Digital Transformation Agency<br/>
 ACT Domain Name Administrator<br/>
 Shared Services ICT<br/>
 <a href="tel:+61262050267">(02) 6205 0267</a><br/>
-<a href="fax:+61262059042">(02) 6205 9042</a><br/>
 <a href="mailto:SharedServicesICTDNA@act.gov.au">SharedServicesICTDNA@act.gov.au</a><br/>
 <a href="https://www.cmtedd.act.gov.au/commercial-services-and-infrastructure/shared-services">ACT domain name policies</a>
 
@@ -59,7 +58,6 @@ Department of Customer Service<br/>
 IT Security NTG<br/>
 Department of Corporate and Information Services<br/>
 <a href="tel:+61889243887">(08) 8924 3887</a><br/>
-<a href="fax:+61889239541">(08) 8923 9541</a><br/>
 <a href="ICTSecurity.NTG@nt.gov.au">ICTSecurity.NTG@nt.gov.au</a>
 
 -----------------------------------------
@@ -67,7 +65,6 @@ Department of Corporate and Information Services<br/>
 ## Queensland
 Katy Drew<br/>
 <a href="tel:+61730342157">(07) 3034 2157</a><br/>
-<a href="fax:+61732222703">(07) 3222 2703</a><br/>
 <a href="mailto:dna@qld.gov.au">dna@qld.gov.au</a><br/>
 <a href="https://www.qgcio.qld.gov.au/documents/domain-names-registration-and-management-standard">Queensland domain name policies</a>
 
