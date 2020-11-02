@@ -27,7 +27,7 @@ metaDesc: Dispute Resolution Policy
 -----------------------------------------
 
 ## Escalation procedures: disputes involving parties outside of the gov.au domain
-1. Disputes that extend outside of the gov.au domain should refer to the .au Dispute Resolution Policy (auDRP).
+1. Disputes that extend outside of the gov.au domain should refer to the [.au Dispute Resolution Policy (auDRP)](https://www.auda.org.au/policies/audrp/).
 
   </div>
 </div>
