@@ -13,8 +13,9 @@ const IndexPage: React.FC<PageContext> = ({ pageContext, location }) => {
           title="Apply for a new gov.au domain | domainname.gov.au"
           description="Apply for a new gov.au domain."
         />
-        <h1>Apply for a new gov.au domain</h1>
-
+        <div className="row-tier">
+          <h1>Apply for a new gov.au domain</h1>
+        </div>
         <div className="row tier">
           <div className="col-md-9">
             <DomainApplicationForm></DomainApplicationForm>

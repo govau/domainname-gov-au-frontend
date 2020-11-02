@@ -5,7 +5,7 @@ import {
   AUfieldset,
   AUlegend,
 } from "../../auds/react/form";
-import { AUcheckbox } from "../../auds/react/control-input";
+import { AUcheckbox, AUradio } from "../../auds/react/control-input";
 import AUheader, { AUheaderBrand } from "../../auds/react/header";
 import AUmainNav, { AUmainNavContent } from "../navigation/ds/main-nav";
 import AUbreadcrumbs from "../../auds/react/breadcrumbs";
@@ -28,6 +28,7 @@ export const AuErrorText: any = AUerrorText;
 export const AuFieldset: any = AUfieldset;
 export const AuLegend: any = AUlegend;
 export const AuCheckbox: any = AUcheckbox;
+export const AuRadio: any = AUradio;
 export const AUHeader: any = AUheader;
 export const Brand: any = AUheaderBrand;
 export const Nav: any = AUmainNav;
