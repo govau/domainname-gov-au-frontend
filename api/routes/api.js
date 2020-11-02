@@ -1,16 +1,47 @@
+require('dotenv').config()
 var express = require('express');
 var router = express.Router();
 var fetch = require('node-fetch');
 var schema = require('./schema');
 var cfenv = require('cfenv');
 
-const credentials = cfenv.getAppEnv().getService('dna-credentials').credentials;
 
-const zendeskEndpoint = credentials.zendeskEndpoint;
-const zendeskUser = credentials.zendeskUser;
-const zendeskAPIKey = credentials.zendeskAPIKey;
-const zendeskBrandId = credentials.zendeskBrandId;
-const zendeskAuth = Buffer.from(zendeskUser + ':' + zendeskAPIKey).toString('base64');
+var cfenv = require("cfenv");
+const { values } = require('lodash');
+let appEnv;
+
+var zendeskEndpoint;
+var zendeskUser;
+var zendeskAPIKey;
+var zendeskBrandId;
+var zendeskAuth;
+
+const ENVIRONMENT = process.env.NODE_ENV;
+
+if (ENVIRONMENT != "production") {
+  zendeskEndpoint = process.env.zendeskEndpoint
+  zendeskUser = process.env.zendeskUser;
+  zendeskAPIKey = process.env.zendeskAPIKey;
+  zendeskBrandId = process.env.zendeskBrandId;
+  zendeskAuth = Buffer.from(zendeskUser + ':' + zendeskAPIKey).toString('base64');
+
+  console.log("ZENDESK CREDS")
+  console.log(zendeskEndpoint)
+  console.log(zendeskUser)
+  console.log(zendeskAPIKey)
+  console.log(zendeskBrandId)
+  console.log(zendeskAuth)
+}
+
+else {
+  appEnv = cfenv.getAppEnv();
+  var credentials = cfenv.getAppEnv().getService('dna-credentials').credentials;
+  zendeskEndpoint = credentials.zendeskEndpoint;
+  zendeskUser = credentials.zendeskUser;
+  zendeskAPIKey = credentials.zendeskAPIKey;
+  zendeskBrandId = credentials.zendeskBrandId;
+  zendeskAuth = Buffer.from(zendeskUser + ':' + zendeskAPIKey).toString('base64');
+}
 
 const headers = {
   'Content-Type': 'application/json',
@@ -62,10 +93,12 @@ router.use(async function(req, res, next) {
 router.use(async function(req, res, next) {
   var postData;
   var userId;
+  console.log
   const method = req.method.toLowerCase();
 
   try {
     postData = await schema[method].validate(req.body,{abortEarly: false});
+    console.log (postData)
     res.postData = postData;
   }
   catch(err) {
@@ -83,13 +116,36 @@ router.use(async function(req, res, next) {
  *
  * Use email address for both name and email so that there's no way to anonymously modify anyone's display name in Zendesk.
  */
+
+// TODO Add conditional for when jurisdiction is not FED
+
+// if (values.jurisdiction === "FED") {
+//   zendeskEndpoint = govauZendeskEndpoint
+// }
+
+// elseif (values.jurisdiction === "ACT") {
+//   endpoint = EmailEndpointForACT
+// }
+
+//etc, etc.
+
+// else {
+
+// }
+
 router.use(async function(req, res, next) {
   console.log("trying to get user");
   const usersUrl = zendeskEndpoint + 'users/create_or_update.json';
   const userData = { "user": { "name": res.postData.applicantEmail, "email": res.postData.applicantEmail } };
+  console.log("\nUsersURL")
+  console.log(usersUrl)
+  console.log("\nuserData")
+  console.log(userData)
+
 
   try {
     const response = await fetch(usersUrl, { method: 'POST', headers: headers, body: JSON.stringify(userData) });
+    console.log(response)
     const response_json = await response.json();
     console.log(response_json);
     console.log("createOrUpdateUser succeeded", response_json.user.id);
@@ -122,15 +178,15 @@ New domain name application.
 Applicant name: ${res.postData.applicantName}
 Applicant email: ${res.postData.applicantEmail}
 Applicant phone: ${res.postData.applicantPhone}
+Applicant Registration Contact: ${res.postData.registrantOrganisation}
 
 ==Domain Details==
 Domain name: ${res.postData.domainName}
 Stated purpose: ${res.postData.statedPurpose}
-Name servers: 
-${res.postData.nameServers}
+Name servers: ${res.postData.nameServers}
 
 ==WHOIS Contacts==
-Registrant organisation: ${res.postData.registrantOrganisation}
+Registrant organisation: ${res.postData.registrantContactOrganisation}
 Registrant name: ${res.postData.registrantName}
 Registrant email: ${res.postData.registrantEmail}
 Registrant phone: ${res.postData.registrantPhone}
@@ -198,14 +254,14 @@ Registrant name: ${res.postData.registrantName}
 Registrant email: ${res.postData.registrantEmail}
 Registrant phone: ${res.postData.registrantPhone}
 Registrant city: ${res.postData.registrantCity}
-Registrant state: ${res.postData.registrantState}
+Registrant state: ${res.postData.jurisdiction}
 
 Technical organisation: ${res.postData.technicalOrganisation}
 Technical name: ${res.postData.technicalName}
 Technical email: ${res.postData.technicalEmail}
 Technical phone: ${res.postData.technicalPhone}
 Technical city: ${res.postData.technicalCity}
-Technical state: ${res.postData.technicalState}
+Technical state: ${res.postData.jurisdiction}
 `
 
   res.ticketData = {
@@ -237,6 +293,7 @@ Domain deletion request.
 Applicant name: ${res.postData.applicantName}
 Applicant email: ${res.postData.applicantEmail}
 Applicant phone: ${res.postData.applicantPhone}
+Accepted terms and conditions: ${res.postData.deleteDomainTC}
 
 ==Domain Details==
 Domain name: ${res.postData.domainName}
