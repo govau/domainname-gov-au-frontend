@@ -76,7 +76,7 @@
     "@types/yup": "^0.29.0",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-mdx": "^1.7.0",
