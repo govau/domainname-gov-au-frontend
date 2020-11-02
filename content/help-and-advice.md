@@ -5,9 +5,11 @@ type: standard
 metaDesc: Help and guidance for gov.au domain name services
 ---
 <div class="container-fluid">
+  <div class="row">
 
   # Help and advice
 
+  </div>
   <div class="row">
     <p class="intro">
       The articles below contain information regarding the domain name services we offer.

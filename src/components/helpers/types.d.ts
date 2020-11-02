@@ -25,6 +25,11 @@ interface SelectOptionType {
   text: string;
 }
 
+interface SelectRadioType {
+  value?: string;
+  text: string;
+}
+
 import { StringSchema, StringSchemaConstructor } from "yup";
 
 declare module "yup" {

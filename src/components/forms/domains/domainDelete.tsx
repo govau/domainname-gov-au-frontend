@@ -1,14 +1,15 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
-
 import TextField from "../text-field";
 import { Aubtn, AuFormGroup, AuFieldset, AuLegend } from "../../helpers/auds";
 import PageAlert from "../../blocks/page-alert";
 import { navigate } from "@reach/router";
 import { InitialValues, Schema, FormData } from "./validate";
-
+import { AUcheckbox, AUradio } from "../../auds/react/control-input";
 import fetch from 'node-fetch';
+import CheckBoxField from "../checkbox";
+import CheckboxGroup from "./components/checkbox-group";
 
 const domainDeleteForm: React.FC = () => {
   const [state, setState] = useState({
@@ -46,6 +47,7 @@ const domainDeleteForm: React.FC = () => {
       return;
     }
 
+    // TODO Add submitted successful page for domainDelete
     setSaving(false);
     navigate(`/submitted`, { replace: true, state: { formData } });
   };
@@ -114,13 +116,13 @@ const domainDeleteForm: React.FC = () => {
             </span>
             <TextField
               id="applicantName"
-              label="Name"
+              label="Applicant name"
               width="xl"
               required
             />
             <TextField
               id="applicantEmail"
-              label="Email address"
+              label="Account/registrant email address"
               width="xl"
               required
             />
@@ -128,10 +130,10 @@ const domainDeleteForm: React.FC = () => {
               id="applicantPhone"
               label="Phone number"
               width="xl"
+              hint="For landlines please include area code."
               required
             />
           </AuFieldset>
-
           <AuFieldset className="fieldset-group">
             <span>
               <AuLegend>
@@ -149,18 +151,47 @@ const domainDeleteForm: React.FC = () => {
 
           <AuFieldset className="fieldset-group">
             <h3>
-              <AuLegend>4. Send request to delete domain</AuLegend>
+              <AuLegend>3. Terms and conditions</AuLegend>
             </h3>
             <p>
               When you submit this form, your details will be recorded and
-              a confirmation request will be emailed to the applicant.
+              a confirmation request will be emailed to the applicant. By submitting this form you confirm the following:
             </p>
+            <ol>
+              <li><b>The domain is not used by any website.</b></li>
+              <li><b>The domain name does not have any sub-domains in use.</b></li>
+              <li><b>The domain name is not a host name for any other domain names.</b></li>
+              <li><b>The domain name does not host any active email accounts.</b></li>
+              <li><b>The domain name does not host any in-use assets(such as scripts, images, documents, etc.) elsewhere.</b></li>
+            </ol>
+            <br/>
             <AuFormGroup>
+              <CheckBoxField
+                id="deleteDomainTC"
+                label="I agree to the terms and conditions."
+                legend= ""
+              >
+              </CheckBoxField>
+            </AuFormGroup>
+            <AuFormGroup>
+              <Aubtn as='secondary' disabled={saving}>
+                <a href="/">
+                  Cancel
+                </a>
+              </Aubtn>
               <Aubtn type="submit" disabled={saving}>
                 {saving ? "Submitting" : "Submit"}
               </Aubtn>
             </AuFormGroup>
           </AuFieldset>
+          <i>
+            Please note that auDA has proposed implementation rules for the direct registration of domain names at the second level of .au (further information on Second Level .au Domains and the .au Priority Allocation Process is available at <a href="https://www.auda.org.au/policies/second-level-au-domains/" >https://www.auda.org.au/policies/second-level-au-domains/</a>).
+          </i>
+          <i>
+          Under these rules, if the coronialcouncil.vic.gov.au domain is deleted, the Department of Justice and Community Safety will relinquish its priority status rights to register, or contend for, the exact match of this domain - coronialcouncil.au - or to block its registration by other entities.
+          </i>
+          {/* <pre>{JSON.stringify(values,null,2)}</pre>
+          <pre>{JSON.stringify(errors,null,2)}</pre> */}
         </Form>
       )}
     </Formik>

@@ -14,7 +14,6 @@ const IndexPage: React.FC<PageContext> = ({ pageContext, location }) => {
           description="Delete a gov.au domain name."
         />
         <h1>Delete a gov.au domain name</h1>
-
         <div className="row tier">
           <div className="col-md-9">
             <DomainDeleteForm></DomainDeleteForm>
