@@ -11,21 +11,22 @@ import {
 } from "../helpers/auds";
 
 interface CheckBoxFieldProps {
-  legend: string;
-  label: string;
-  id: string;
-  required?: boolean;
+  className?: string;
   defaultValue?: string;
   hint?: string;
+  id: string;
+  label: string;
+  legend: string;
   onChange?: (e: any) => void;
-  className?: string;
+  required?: boolean;
 }
 
 const CheckBoxField: React.FC<CheckBoxFieldProps> = (
   props: CheckBoxFieldProps
 ) => {
   const [field, meta] = useField({ name: props.id, ...props });
-  const error = meta.error && meta.touched ? true : false;
+  const error = meta.touched && meta.error ? true: false;
+
   return (
     <AuFormGroup status={error ? "invalid" : "valid"}>
       <AuFieldset>

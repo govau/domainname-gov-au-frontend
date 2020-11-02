@@ -47,6 +47,7 @@ const domainUpdateContactForm: React.FC = () => {
       return;
     }
 
+    // TODO Add submitted successful page specifically for domainUpdateContact
     setSaving(false);
     navigate(`/submitted`, { replace: true, state: { formData } });
   };
@@ -115,19 +116,20 @@ const domainUpdateContactForm: React.FC = () => {
             </span>
             <TextField
               id="applicantName"
-              label="Name"
+              label="Applicant name"
               width="xl"
               required
             />
             <TextField
               id="applicantEmail"
-              label="Email address"
+              label="Account/registrant email address"
+              hint="Please use the email address associated with this account (if known)"
               width="xl"
               required
             />
             <TextField
               id="applicantPhone"
-              label="Phone number"
+              label="Applicant phone number"
               width="xl"
               required
             />
@@ -141,8 +143,8 @@ const domainUpdateContactForm: React.FC = () => {
             </span>
             <TextField
               id="domainName"
-              label="Domain name you would like to change"
-              hint="Must end in .gov.au"
+              label="Domain names(s)"
+              hint="If you wish to modify multiple domain names with this request, please enter them one per line. Must end in .gov.au"
               width="xl"
               required
             />
@@ -164,25 +166,21 @@ const domainUpdateContactForm: React.FC = () => {
             <TextField
               id="registrantName"
               label="Registrant name"
-              required
               width="xl"
             />
             <TextField
               id="registrantEmail"
-              label="Registrant email"
-              required
+              label="Registrant email address"
               width="xl"
             />
             <TextField
               id="registrantPhone"
-              label="Registrant phone"
-              required
+              label="Registrant phone number"
               width="xl"
             />
             <TextField
               id="registrantCity"
               label="Registrant city"
-              required
               width="xl"
             />
             <SelectField
@@ -205,25 +203,22 @@ const domainUpdateContactForm: React.FC = () => {
             <TextField
               id="technicalName"
               label="Technical contact name"
-              required
               width="xl"
             />
             <TextField
               id="technicalEmail"
-              label="Technical contact email"
-              required
+              label="Technical contact email address"
               width="xl"
             />
             <TextField
               id="technicalPhone"
-              label="Technical contact phone"
+              label="Technical contact phone number"
               required
               width="xl"
             />
             <TextField
               id="technicalCity"
               label="Technical contact city"
-              required
               width="xl"
             />
             <SelectField
@@ -251,6 +246,11 @@ const domainUpdateContactForm: React.FC = () => {
               a confirmation request will be emailed to the applicant.
             </p>
             <AuFormGroup>
+              <Aubtn as='secondary' disabled={saving}>
+                <a href="/">
+                  Cancel
+                </a>
+              </Aubtn>
               <Aubtn type="submit" disabled={saving}>
                 {saving ? "Submitting" : "Submit"}
               </Aubtn>

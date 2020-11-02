@@ -1,9 +1,8 @@
 import React from "react";
-import SEO from "../../../components/seo";
-import DefaultLayout from "../../../components/layouts/default-layout";
-import { PageContext } from "../../../components/helpers/types";
-import DomainUpdateContactForm from "../../../components/forms/domains/domainUpdateContact";
-import { AuHintText } from "../../../components/helpers/auds";
+import SEO from "../../components/seo";
+import DefaultLayout from "../../components/layouts/default-layout";
+import { PageContext } from "../../components/helpers/types";
+import DomainUpdateContactForm from "../../components/forms/domains/domainUpdateContact";
 
 const IndexPage: React.FC<PageContext> = ({ pageContext, location }) => {
   return (
