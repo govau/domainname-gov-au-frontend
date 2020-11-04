@@ -68,8 +68,7 @@ const schema = {
     applicantName: string().required(validationErrorMessages.applicantNameRequired),
     applicantEmail: string().email(validationErrorMessages.emailFormat).matches(govAuRegex, validationErrorMessages.emailFormat).required(validationErrorMessages.applicantEmailRequired),
     applicantPhone: string().matches(phoneNumberRegex, validationErrorMessages.phoneNumberFormat).required(validationErrorMessages.applicantPhoneRequired),
-        changeImplementedSchedule: Yup.string().oneOf(ValidationErrorMessages.changeTypeAllowableValues).required(ValidationErrorMessages.changeTypeRequired),
-
+    changeImplementedSchedule: string().oneOf(ValidationErrorMessages.changeTypeAllowableValues).required(ValidationErrorMessages.changeTypeRequired),
     domainName: string().matches(govAuRegex, validationErrorMessages.domainNameFormat).required(validationErrorMessages.domainNameRequired),
     nameServers: string().required(validationErrorMessages.nameServersRequired),
     registrantContactOrganisation: string().required(validationErrorMessages.registrantContactOrganisationRequired),
@@ -118,7 +117,7 @@ const schema = {
     applicantEmail: string().email(validationErrorMessages.emailFormat).matches(govAuRegex, validationErrorMessages.emailFormat).required(validationErrorMessages.applicantEmailRequired),
     applicantPhone: string().matches(phoneNumberRegex, validationErrorMessages.phoneNumberFormat).required(validationErrorMessages.applicantPhoneRequired),
     domainName: string().matches(govAuRegex, validationErrorMessages.domainNameFormat).required(validationErrorMessages.domainNameRequired),
-    deleteDomainTC: yup.bool().oneOf([true], validationErrorMessages.checkboxesRequired).required(validationErrorMessages.delete),
+    deleteDomainTC: yup.boolean().oneOf([true], validationErrorMessages.checkboxesRequired).required(validationErrorMessages.delete),
   }),
   "transfer": object().shape({
     applicantName: string().required(validationErrorMessages.applicantNameRequired),
