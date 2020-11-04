@@ -155,14 +155,16 @@ const domainDeleteForm: React.FC = () => {
             </h3>
             <p>
               When you submit this form, your details will be recorded and
-              a confirmation request will be emailed to the applicant. By submitting this form you confirm the following:
+              a confirmation request will be emailed to the applicant. By submitting this 
+              form you confirm the following:
             </p>
             <ol>
               <li><b>The domain is not used by any website.</b></li>
               <li><b>The domain name does not have any sub-domains in use.</b></li>
               <li><b>The domain name is not a host name for any other domain names.</b></li>
               <li><b>The domain name does not host any active email accounts.</b></li>
-              <li><b>The domain name does not host any in-use assets(such as scripts, images, documents, etc.) elsewhere.</b></li>
+              <li><b>The domain name does not host any in-use assets(such as scripts, images, 
+                documents, etc.) elsewhere.</b></li>
             </ol>
             <br/>
             <AuFormGroup>
@@ -185,13 +187,18 @@ const domainDeleteForm: React.FC = () => {
             </AuFormGroup>
           </AuFieldset>
           <i>
-            Please note that auDA has proposed implementation rules for the direct registration of domain names at the second level of .au (further information on Second Level .au Domains and the .au Priority Allocation Process is available at <a href="https://www.auda.org.au/policies/second-level-au-domains/" >https://www.auda.org.au/policies/second-level-au-domains/</a>).
+            Please note that auDA has proposed implementation rules for the direct registration 
+            of domain names at the second level of .au (further information on Second Level .au 
+            Domains and the .au Priority Allocation Process is available at 
+            <a href="https://www.auda.org.au/policies/second-level-au-domains/">
+            https://www.auda.org.au/policies/second-level-au-domains/</a>).
           </i>
           <i>
-          Under these rules, if the coronialcouncil.vic.gov.au domain is deleted, the Department of Justice and Community Safety will relinquish its priority status rights to register, or contend for, the exact match of this domain - coronialcouncil.au - or to block its registration by other entities.
+            Under these rules, if the coronialcouncil.vic.gov.au domain is deleted, the Department
+            of Justice and Community Safety will relinquish its priority status rights to register, 
+            or contend for, the exact match of this domain - coronialcouncil.au - or to block its 
+            registration by other entities.
           </i>
-          {/* <pre>{JSON.stringify(values,null,2)}</pre>
-          <pre>{JSON.stringify(errors,null,2)}</pre> */}
         </Form>
       )}
     </Formik>

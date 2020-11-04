@@ -215,12 +215,24 @@ const domainTransferForm: React.FC = () => {
           <br/>
           <AuFieldset className="fieldset-group">
             <AuFormGroup id="whoIsRadioFormGroup">
-              <AuRadio block name="whois-radio" label="Use Registrant and Technical contact details as per an existing domain" value="registrant-radio" id="1" defaultChecked={true} onChange={handleWhoIsChange} />
-              <AuRadio block name="whois-radio" label="Create new Registrant and Technical contacts" value="create_new-radio" id="2"  onChange={handleWhoIsChange}/>
+              <AuRadio 
+                block name="whois-radio"
+                defaultChecked={true}
+                id="1"
+                label="Use Registrant and Technical contact details as per an existing domain"
+                onChange={handleWhoIsChange}
+                value="registrant-radio"
+              />
+              <AuRadio
+                block name="whois-radio"
+                id="2"
+                label="Create new Registrant and Technical contacts"
+                onChange={handleWhoIsChange}
+                value="create_new-radio"
+              />
               {
                 !whoIsContacts ? "" : 
                   <AuFormGroup id="whoIsExisting">
-                    {/* {values.whoIsRadioC} */}
                     <TextField
                       id="duplicateContactDetails"
                       label="Duplicate contact details from the following domain"
@@ -232,42 +244,88 @@ const domainTransferForm: React.FC = () => {
               {
                 whoIsContacts ? "" : 
                   <AuFormGroup id="whoIsNew">
-                    
-                  <h4>Business registrant details</h4>
-                  <TextField
-                    id="registrantName"
-                    label="Registrant name"
-                    required
-                    width="xl"
-                  />
-                  <TextField
-                    id="registrantEmail"
-                    label="Registrant email"
-                    required
-                    width="xl"
-                  />
-                  <TextField
-                    id="registrantPhone"
-                    label="Registrant phone"
-                    required
-                    width="xl"
-                  />
-                  <TextField
-                    id="registrantCity"
-                    label="Registrant city"
-                    required
-                    width="xl"
-                  />
-                  <TextField
-                    id="registrantContactOrganisation"
-                    label="Registrant organisation"
-                    required
-                    width="xl"
-                  />
-                  <SelectField
+                    <h4>Business registrant details</h4>
+                    <TextField
+                      id="registrantName"
+                      label="Registrant name"
+                      required
+                      width="xl"
+                    />
+                    <TextField
+                      id="registrantEmail"
+                      label="Registrant email"
+                      required
+                      width="xl"
+                    />
+                    <TextField
+                      id="registrantPhone"
+                      label="Registrant phone"
+                      required
+                      width="xl"
+                    />
+                    <TextField
+                      id="registrantCity"
+                      label="Registrant city"
+                      required
+                      width="xl"
+                    />
+                    <TextField
+                      id="registrantContactOrganisation"
+                      label="Registrant organisation"
+                      required
+                      width="xl"
+                    />
+                    <SelectField
+                      defaultValue={InitialValues.jurisdiction}
+                      id="registrantState"
+                      label="Registrant state or territory"
+                      options={[
+                        { value: "", text: "Choose one" },
+                        { value: "ACT", text: "Australian Capital Territory" },
+                        { value: "NSW", text: "New South Wales" },
+                        { value: "NT", text: "Northern Territory" },
+                        { value: "QLD", text: "Queensland" },
+                        { value: "SA", text: "South Australia" },
+                        { value: "TAS", text: "Tasmania" },
+                        { value: "VIC", text: "Victoria" },
+                        { value: "WA", text: "Western Australia" },
+                      ]}
+                    />
+                    <h4>Technical contact details</h4>
+                    <TextField
+                      id="technicalName"
+                      label="Technical contact name"
+                      required
+                      width="xl"
+                    />
+                    <TextField
+                      id="technicalEmail"
+                      label="Technical contact email"
+                      required
+                      width="xl"
+                    />
+                    <TextField
+                      id="technicalPhone"
+                      label="Technical contact phone"
+                      required
+                      width="xl"
+                    />
+                    <TextField
+                      id="technicalCity"
+                      label="Technical contact city"
+                      required
+                      width="xl"
+                    />
+                    <TextField
+                      id="technicalOrganisation"
+                      label="Technical organisation"
+                      required
+                      width="xl"
+                    />
+                    <SelectField
                     defaultValue={InitialValues.jurisdiction}
-                    id="registrantState"
-                    label="Registrant state or territory"
+                    id="technicalState"
+                    label="Technical contact state or territory"
                     options={[
                       { value: "", text: "Choose one" },
                       { value: "ACT", text: "Australian Capital Territory" },
@@ -279,97 +337,52 @@ const domainTransferForm: React.FC = () => {
                       { value: "VIC", text: "Victoria" },
                       { value: "WA", text: "Western Australia" },
                     ]}
-                  />
-                  <h4>Technical contact details</h4>
-                  <TextField
-                    id="technicalName"
-                    label="Technical contact name"
-                    required
-                    width="xl"
-                  />
-                  <TextField
-                    id="technicalEmail"
-                    label="Technical contact email"
-                    required
-                    width="xl"
-                  />
-                  <TextField
-                    id="technicalPhone"
-                    label="Technical contact phone"
-                    required
-                    width="xl"
-                  />
-                  <TextField
-                    id="technicalCity"
-                    label="Technical contact city"
-                    required
-                    width="xl"
-                  />
-                  <TextField
-                    id="technicalOrganisation"
-                    label="Technical organisation"
-                    required
-                    width="xl"
-                  />
-                  <SelectField
-                  defaultValue={InitialValues.jurisdiction}
-                  id="technicalState"
-                  label="Technical contact state or territory"
-                  options={[
-                    { value: "", text: "Choose one" },
-                    { value: "ACT", text: "Australian Capital Territory" },
-                    { value: "NSW", text: "New South Wales" },
-                    { value: "NT", text: "Northern Territory" },
-                    { value: "QLD", text: "Queensland" },
-                    { value: "SA", text: "South Australia" },
-                    { value: "TAS", text: "Tasmania" },
-                    { value: "VIC", text: "Victoria" },
-                    { value: "WA", text: "Western Australia" },
-                  ]}
-                  />
-                </AuFormGroup>
-            }
+                    />
+                  </AuFormGroup>
+                }
+              </AuFormGroup>
+            </AuFieldset>
+            <AuFieldset className="fieldset-group">
+              <h3>
+                <AuLegend>4. Authorising contact email</AuLegend>
+              </h3>
+              <TextField
+                hint="The domain transfer request must be approved by the Registrant Contact of the 
+                organisation. If you are not sure who the correct contact is, do a .au Whois Lookup on the domain.
+                A confirmation request email will be sent to this address when form is submitted."
+                id="authorisingContactEmail"
+                label="Authorising contact email"
+                required
+                width="xl"
+              />
+            </AuFieldset>
+          <AuFieldset className="fieldset-group">
+            <h3>
+              <AuLegend>5. Send request to transfer domain</AuLegend>
+            </h3>
+            <p>
+              The change request must be approved by the Registrant Contact of your organisation.
+              If you are not sure who the correct contact is, do a <a href="https://whois.auda.org.au/">au.
+                Whois Lookup</a> on the domain.
+            </p>
+            <p>
+              A confirmation request email will be sent to this address when form is submitted.</p>
+            <p>
+              Please note that we will seek approval for the transfer from the relinquishing/acquiring 
+              organisation.
+            </p>
+            <AuFormGroup>
+              <Aubtn as='secondary' disabled={saving}>
+                <a href="/">
+                  Cancel
+                </a>
+              </Aubtn>
+              <Aubtn type="submit" disabled={saving}>
+                {saving ? "Submitting" : "Submit"}
+              </Aubtn>
             </AuFormGroup>
-        </AuFieldset>
-        <AuFieldset 
-          className="fieldset-group"
-        >
-          <h3>
-            <AuLegend>4. Authorising contact email</AuLegend>
-          </h3>
-          <TextField
-            hint="The domain transfer request must be approved by the Registrant Contact of the organisation. If you are not sure who the correct contact is, do a .au Whois Lookup on the domain.
-            A confirmation request email will be sent to this address when form is submitted."
-            id="authorisingContactEmail"
-            label="Authorising contact email"
-            required
-            width="xl"
-          />
-        </AuFieldset>
-        <AuFieldset className="fieldset-group">
-          <h3>
-            <AuLegend>5. Send request to transfer domain</AuLegend>
-          </h3>
-          <p>
-            The change request must be approved by the Registrant Contact of your organisation. If you are not sure who the correct contact is, do a <a href="https://whois.auda.org.au/">au. Whois Lookup</a> on the domain.
-          </p>
-          <p>
-            A confirmation request email will be sent to this address when form is submitted.</p>
-          <p>
-            Please note that we will seek approval for the transfer from the relinquishing/acquiring organisation.
-          </p>
-          <AuFormGroup>
-            <Aubtn as='secondary' disabled={saving}>
-              <a href="/">
-                Cancel
-              </a>
-            </Aubtn>
-            <Aubtn type="submit" disabled={saving}>
-              {saving ? "Submitting" : "Submit"}
-            </Aubtn>
-          </AuFormGroup>
-        </AuFieldset>
-      </Form>
+          </AuFieldset>
+        </Form>
       )}
     </Formik>
   );

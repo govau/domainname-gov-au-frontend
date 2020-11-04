@@ -176,23 +176,22 @@ const domainApplicationForm: React.FC = () => {
                 </AuLegend>
               </span>
               <TextField
-                id="applicantName"
                 hint="The person submitting the request"
+                id="applicantName"
                 label="Name"
                 required
                 width="xl"
               />
               <TextField
-                as="textarea"
-                id="applicantEmail"
                 hint="The contact email for the person submitting the request"
+                id="applicantEmail"
                 label="Email address"
                 required
                 width="xl"
               />
               <TextField
-                id="applicantPhone"
                 hint="The contact number for the person submitting the request"
+                id="applicantPhone"
                 label="Phone number"
                 required
                 width="xl"
@@ -205,38 +204,41 @@ const domainApplicationForm: React.FC = () => {
                 </AuLegend>
               </span>
               <TextField
+                dark
+                hint="Do not include www. Must end in .gov.au. A seperate application form is required for each domain. 
+                Domain names must bear a direct semantic connection"
                 id="domainName"
                 label="Domain name you would like to register"
-                hint="Do not include www. Must end in .gov.au. A seperate application form is required for each domain. Domain names must bear a direct semantic connection"
-                width="xl"
                 required
-                dark
+                width="xl"
+
               />
               <TextField
                 id="registrantOrganisation"
-                label="Which organisation will be responsible for this domain name?"
                 hint="Please provide information on the initiative that proposed domain will support. Domain names should be meaningful
                 to the intended audience (refer to the gov.au Eligibility and Allocation Policy). The Registrant organisation must be an Australian, 
                 state, territory or local government entity such as: a department or agency; 
                 local council; a statutory authority; or other defined government body (refer to the gov.au Eligibility and Allocation Policy)."
-                width="xl"
+                label="Which organisation will be responsible for this domain name?"
                 required
+                width="xl"
               />
               <TextField
+                as="textarea"
+                hint="Why are you applying to register this domain name?"
                 id="statedPurpose"
                 label="Purpose of the domain name"
-                hint="Why are you applying to register this domain name?"
-                width="xl"
-                as="textarea" 
                 required
+                width="xl"
+
               />
               <TextField
-                id="nameServers"
-                label="Name servers"
+                as="textarea"
                 hint="If known, please provide 2 or more name servers to be used for this domain. One per line. 
                 Name servers can be added or removed after registration. Please preclude trailing dots"
+                id="nameServers"
+                label="Name servers"
                 width="xl"
-                as="textarea"
               />
             </AuFieldset>
 
@@ -252,8 +254,21 @@ const domainApplicationForm: React.FC = () => {
 
               <AuFieldset className="fieldset-group">
                 <AuFormGroup id="whoIsRadioFormGroup">
-                  <AuRadio block name="whois-radio" label="Use Registrant and Technical contact details as per an existing domain" value="registrant-radio" id="1" defaultChecked={true} onChange={handleWhoIsChange} />
-                  <AuRadio block name="whois-radio" label="Create new Registrant and Technical contacts" value="create_new-radio" id="2"  onChange={handleWhoIsChange}/>
+                  <AuRadio 
+                    block name="whois-radio"
+                    defaultChecked={true} 
+                    id="1"
+                    label="Use Registrant and Technical contact details as per an existing domain"
+                    value="registrant-radio"  
+                    onChange={handleWhoIsChange}
+                  />
+                  <AuRadio 
+                    block name="whois-radio"
+                    id="2"
+                    label="Create new Registrant and Technical contacts"
+                    onChange={handleWhoIsChange}
+                    value="create_new-radio"
+                  />
                   {
                     !whoIsContacts ? "" : 
                       <AuFormGroup id="whoIsExisting">
@@ -375,8 +390,10 @@ const domainApplicationForm: React.FC = () => {
                 <AuLegend>5. Authorising contact email</AuLegend>
               </h3>
               <TextField
-                hint="The domain application must be approved by the Registrant Contact of the organisation. If you are not sure who the correct contact is, do a .au Whois Lookup on the domain.
-                A confirmation request email will be sent to this address when form is submitted."
+                hint="The domain application must be approved by the Registrant Contact 
+                of the organisation. If you are not sure who the correct contact is, do 
+                a .au Whois Lookup on the domain. A confirmation request email will be 
+                sent to this address when form is submitted."
                 id="authorisingContactEmail"
                 label="Authorising contact email"
                 required
@@ -403,8 +420,6 @@ const domainApplicationForm: React.FC = () => {
               </AuFormGroup>
             </AuFieldset>
           </AuFieldset>
-          {/* <pre>{JSON.stringify(values,null,2)}</pre> */}
-          {/* <pre>{JSON.stringify(errors,null,2)}</pre> */}
         </Form>
       )}
     </Formik>

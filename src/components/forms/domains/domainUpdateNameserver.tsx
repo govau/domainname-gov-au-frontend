@@ -38,8 +38,8 @@ const domainUpdateNameserverForm: React.FC = () => {
   };
 
   const submitForm = async (formData: FormData) => {
-    setSaving(true);
 
+    setSaving(true);
     const fetchUrl = 'http://localhost:9000/api/domain';
     const headers = { 'Content-Type': 'application/json' };
 
@@ -118,16 +118,20 @@ const domainUpdateNameserverForm: React.FC = () => {
               <p>
                 <ul>
                   <li>
-                    The change request must be submitted by the Registrant or Technical Contact of the domain (refer to <a href="https://whois.auda.org.au/">.au Whois lookup</a>).
+                    The change request must be submitted by the Registrant or Technical Contact 
+                    of the domain (refer to <a href="https://whois.auda.org.au/">.au Whois lookup</a>).
                   </li>
                   <li>
-                    This service is for adding and removing name servers to a gov.au domain. If you would like to make changes to your DNS settings (for example TTL, A records, CNAME, MX records) you will need to contact your DNS service provider. 
+                    This service is for adding and removing name servers to a gov.au domain. 
+                    If you would like to make changes to your DNS settings (for example TTL, A records, CNAME, MX records) 
+                    you will need to contact your DNS service provider. 
                   </li>
                   <li>
                     Once the changes have been made we will confirm completion through the email that the request was made.
                   </li>
                   <li>
-                    Changes that are scheduled for after-hours, the contact should be on hand to check and test the changes, so if necessary, a roll-back can be preformed. 
+                    Changes that are scheduled for after-hours, the contact should be on hand to check and test the changes, 
+                    so if necessary, a roll-back can be preformed. 
                   </li>
                 </ul>
               </p>
@@ -159,7 +163,6 @@ const domainUpdateNameserverForm: React.FC = () => {
               width="xl"
             />
           </AuFieldset>
-
           <AuFieldset className="fieldset-group">
             <span>
               <AuLegend>
@@ -174,13 +177,14 @@ const domainUpdateNameserverForm: React.FC = () => {
               width="xl"
             />
             <p>
-              With the removal and addition of the name servers, please ensure that the result contains at least 2 or more name servers. You can view the existing name servers by doing an <a href="https://whois.auda.org.au/">.au Whois lookup</a>. 
+              With the removal and addition of the name servers, please ensure that the 
+              result contains at least 2 or more name servers. You can view the existing 
+              name servers by doing an <a href="https://whois.auda.org.au/">.au Whois lookup</a>. 
             </p>
             <p>  
               If the name servers are glue records, please also supply their IP addresses.
             </p>
           </AuFieldset>
-
           <AuFieldset className="fieldset-group">
             <span>
               <AuLegend>
@@ -189,7 +193,8 @@ const domainUpdateNameserverForm: React.FC = () => {
             </span>
             <TextField
               as="textarea"
-              hint="Please provide the full set of name servers to be removed for this domain. 2 or more name servers are required. One name server per line. "
+              hint="Please provide the full set of name servers to be removed for this domain. 
+              2 or more name servers are required. One name server per line. "
               id="removeNameServers"
               label="Remove name servers"
               width="xl"
@@ -198,47 +203,50 @@ const domainUpdateNameserverForm: React.FC = () => {
             </AuFieldset>
               <TextField
               as="textarea"
-              hint="Please provide the full set of name servers to be used for this domain. 2 or more name servers are required. One name server per line. "
+              hint="Please provide the full set of name servers to be used for this domain. 
+              2 or more name servers are required. One name server per line. "
               id="addNameServers"
               label="Add name servers"
               width="xl"
             />
           </AuFieldset>
           <AuFieldset>
-          <h3>
-            <AuLegend>4. When would you like this change implemented?</AuLegend>
-          </h3>
-          <p>
+            <h3>
+              <AuLegend>4. When would you like this change implemented?</AuLegend>
+            </h3>
             <div className="au-callout max-42">
-                <p>
-                  <ul>
-                    <li>
-                      <b>Standard Change</b>: Select this option for non-time sensitive name server changes that are ready to be implemented. We will endeavour to action this request within one business day.
-                    </li>
-                    <li>
-                      <b>Scheduled Change</b>: Select this option if your name server change is required to be completed at a specific time. Please provide one business day notice and we will endeavour to action this request at the preferred time.
-                    </li>
-                    <li>
-                    <b>Urgent/Emergency Change</b>: Select this option if critical services are impacted and changes to name servers are required to resolve the issue. Please submit this form and call us (mobile: 0437 653 861) to bring this to our attention. 
-                    </li>
-                  </ul>
-                </p>
-              </div>  
-          </p>
-          <br/>
-              <AuFormGroup>
-                <SelectField
-                id="changeImplementedSchedule"
-                label="When would you like this change implemented?"
-                options={[
-                  { value: "", text: "Choose one" },
-                  { value: "standard", text: "Standard Change" },
-                  { value: "scheduled", text: "Scheduled Change" },
-                  { value: "urgent", text: "Urgent Change" },
-                ]}
+              <p>
+                <ul>
+                  <li>
+                    <b>Standard Change</b>: Select this option for non-time sensitive name server 
+                    changes that are ready to be implemented. We will endeavour to action this request within one business day.
+                  </li>
+                  <li>
+                    <b>Scheduled Change</b>: Select this option if your name server change is 
+                    required to be completed at a specific time. Please provide one business 
+                    day notice and we will endeavour to action this request at the preferred time.
+                  </li>
+                  <li>
+                  <b>Urgent/Emergency Change</b>: Select this option if critical services are 
+                  impacted and changes to name servers are required to resolve the issue. 
+                  Please submit this form and call us (mobile: 0437 653 861) to bring this to our attention. 
+                  </li>
+                </ul>
+              </p>
+            </div>  
+            <AuFormGroup>
+              <SelectField
+              id="changeImplementedSchedule"
+              label="When would you like this change implemented?"
+              options={[
+                { value: "", text: "Choose one" },
+                { value: "standard", text: "Standard Change" },
+                { value: "scheduled", text: "Scheduled Change" },
+                { value: "urgent", text: "Urgent Change" },
+              ]}
               />
-              </AuFormGroup>
-            </AuFieldset>
+            </AuFormGroup>
+          </AuFieldset>
           <br/>
           <AuFieldset className="fieldset-group">
             <h3>
@@ -259,7 +267,6 @@ const domainUpdateNameserverForm: React.FC = () => {
               </Aubtn>
             </AuFormGroup>
           </AuFieldset>
-          <pre>{JSON.stringify(values,null,2)}</pre>
         </Form>
       )}
     </Formik>

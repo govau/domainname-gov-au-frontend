@@ -144,7 +144,8 @@ const domainUpdateContactForm: React.FC = () => {
             <TextField
               id="domainName"
               label="Domain names(s)"
-              hint="If you wish to modify multiple domain names with this request, please enter them one per line. Must end in .gov.au"
+              hint="If you wish to modify multiple domain names with this request, 
+              please enter them one per line. Must end in .gov.au"
               width="xl"
               required
             />
