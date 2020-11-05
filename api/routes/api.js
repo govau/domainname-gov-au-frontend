@@ -116,41 +116,40 @@ router.post('/domain', async function(req, res, next) {
   console.log('building ticket body');
 
   const ticketBody = `
-New domain name application.
-==Applicant Details==
-Applicant name: ${res.postData.applicantName}
-Applicant email: ${res.postData.applicantEmail}
-Applicant phone: ${res.postData.applicantPhone}
-==Domain Details==
-Domain name: ${res.postData.domainName}
-Stated purpose: ${res.postData.statedPurpose}
-Name servers: 
-${res.postData.nameServers}
-==WHOIS Contacts==
-Registrant organisation: ${res.postData.registrantOrganisation}
-Registrant name: ${res.postData.registrantName}
-Registrant email: ${res.postData.registrantEmail}
-Registrant phone: ${res.postData.registrantPhone}
-Registrant city: ${res.postData.registrantCity}
-Registrant state: ${res.postData.registrantState}
-Technical organisation: ${res.postData.technicalOrganisation}
-Technical name: ${res.postData.technicalName}
-Technical email: ${res.postData.technicalEmail}
-Technical phone: ${res.postData.technicalPhone}
-Technical city: ${res.postData.technicalCity}
-Technical state: ${res.postData.technicalState}
-`
-
-  res.ticketData = {
-    "ticket": {
-      "requester_id": res.zendeskUserId,
-      "subject": "New domain application: " + res.postData.domainName,
-      "comment": {
-        "body": ticketBody
-      },
-      "type": "task",
-      "tags": "create_domain",
-      "brand_id": zendeskBrandId
+    New domain name application.
+    ==Applicant Details==
+    Applicant name: ${res.postData.applicantName}
+    Applicant email: ${res.postData.applicantEmail}
+    Applicant phone: ${res.postData.applicantPhone}
+    ==Domain Details==
+    Domain name: ${res.postData.domainName}
+    Stated purpose: ${res.postData.statedPurpose}
+    Name servers: 
+    ${res.postData.nameServers}
+    ==WHOIS Contacts==
+    Registrant organisation: ${res.postData.registrantOrganisation}
+    Registrant name: ${res.postData.registrantName}
+    Registrant email: ${res.postData.registrantEmail}
+    Registrant phone: ${res.postData.registrantPhone}
+    Registrant city: ${res.postData.registrantCity}
+    Registrant state: ${res.postData.registrantState}
+    Technical organisation: ${res.postData.technicalOrganisation}
+    Technical name: ${res.postData.technicalName}
+    Technical email: ${res.postData.technicalEmail}
+    Technical phone: ${res.postData.technicalPhone}
+    Technical city: ${res.postData.technicalCity}
+    Technical state: ${res.postData.technicalState}
+    `
+    res.ticketData = {
+      "ticket": {
+        "requester_id": res.zendeskUserId,
+        "subject": "New domain application: " + res.postData.domainName,
+        "comment": {
+          "body": ticketBody
+        },
+        "type": "task",
+        "tags": "create_domain",
+        "brand_id": zendeskBrandId
     }
   }
 
@@ -172,44 +171,43 @@ router.put('/domain', async function(req, res, next) {
 router.patch('/domain', async function(req, res, next) {
 
   const ticketBody = `
-Domain update request.
-Only fields with data should be updated. Empty fields should remain unchanged.
-==Applicant Details==
-Applicant name: ${res.postData.applicantName}
-Applicant email: ${res.postData.applicantEmail}
-Applicant phone: ${res.postData.applicantPhone}
-==Domain Details==
-Domain name(s): 
-${res.postData.domainName}
-Reason for transfer: ${res.postData.statedPurpose}
-Name servers: 
-${res.postData.nameServers}
-==WHOIS Contacts==
-Registrant organisation: ${res.postData.registrantOrganisation}
-Registrant name: ${res.postData.registrantName}
-Registrant email: ${res.postData.registrantEmail}
-Registrant phone: ${res.postData.registrantPhone}
-Registrant city: ${res.postData.registrantCity}
-Registrant state: ${res.postData.registrantState}
-Technical organisation: ${res.postData.technicalOrganisation}
-Technical name: ${res.postData.technicalName}
-Technical email: ${res.postData.technicalEmail}
-Technical phone: ${res.postData.technicalPhone}
-Technical city: ${res.postData.technicalCity}
-Technical state: ${res.postData.technicalState}
-`
-
-  res.ticketData = {
-    "ticket": {
-      "requester_id": res.zendeskUserId,
-      "subject": "Domain update request: " + res.postData.domainName,
-      "comment": {
-        "body": ticketBody
-      },
-      "type": "task",
-      "tags": "",
-      "priority": "urgent",
-      "brand_id": zendeskBrandId
+    Domain update request.
+    Only fields with data should be updated. Empty fields should remain unchanged.
+    ==Applicant Details==
+    Applicant name: ${res.postData.applicantName}
+    Applicant email: ${res.postData.applicantEmail}
+    Applicant phone: ${res.postData.applicantPhone}
+    ==Domain Details==
+    Domain name(s): 
+    ${res.postData.domainName}
+    Reason for transfer: ${res.postData.statedPurpose}
+    Name servers: 
+    ${res.postData.nameServers}
+    ==WHOIS Contacts==
+    Registrant organisation: ${res.postData.registrantOrganisation}
+    Registrant name: ${res.postData.registrantName}
+    Registrant email: ${res.postData.registrantEmail}
+    Registrant phone: ${res.postData.registrantPhone}
+    Registrant city: ${res.postData.registrantCity}
+    Registrant state: ${res.postData.registrantState}
+    Technical organisation: ${res.postData.technicalOrganisation}
+    Technical name: ${res.postData.technicalName}
+    Technical email: ${res.postData.technicalEmail}
+    Technical phone: ${res.postData.technicalPhone}
+    Technical city: ${res.postData.technicalCity}
+    Technical state: ${res.postData.technicalState}
+    `
+    res.ticketData = {
+      "ticket": {
+        "requester_id": res.zendeskUserId,
+        "subject": "Domain update request: " + res.postData.domainName,
+        "comment": {
+          "body": ticketBody
+        },
+        "type": "task",
+        "tags": "",
+        "priority": "urgent",
+        "brand_id": zendeskBrandId
     }
   }
 
@@ -222,15 +220,14 @@ Technical state: ${res.postData.technicalState}
  */
 router.delete('/domain', async function(req, res, next) {
   const ticketBody = `
-Domain deletion request.
-==Applicant Details==
-Applicant name: ${res.postData.applicantName}
-Applicant email: ${res.postData.applicantEmail}
-Applicant phone: ${res.postData.applicantPhone}
-==Domain Details==
-Domain name: ${res.postData.domainName}
-`
-
+    Domain deletion request.
+    ==Applicant Details==
+    Applicant name: ${res.postData.applicantName}
+    Applicant email: ${res.postData.applicantEmail}
+    Applicant phone: ${res.postData.applicantPhone}
+    ==Domain Details==
+    Domain name: ${res.postData.domainName}
+    `
   res.ticketData = {
     "ticket": {
       "requester_id": res.zendeskUserId,
